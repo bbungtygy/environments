@@ -78,7 +78,7 @@ set wildignore=*.o,*~,*.pyc
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -111,7 +111,7 @@ set showmatch
 set mat=2
 
 " No annoying sound on errors
-set noerrorbells
+set errorbells
 set novisualbell
 set t_vb=
 set tm=500
@@ -123,7 +123,7 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
+colorscheme default
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -159,9 +159,9 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -393,3 +393,21 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+
+
+""""""""""
+highlight Search cterm=underline ctermfg=yellow ctermbg=yellow
+
+
+""""""""""
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'kchmck/vim-coffee-script'
+
+syntax enable
+filetype plugin indent on
