@@ -1,0 +1,17 @@
+WDIR="/home/goo/Projects/$1/"
+PORT=$2
+NOMENUBAR="--hide-menubar"
+NOBORDER="--hide-borders"
+ 
+ xfce4-terminal $NOMENUBAR --title="Assets" --working-directory=$WDIR/app/assets/ --geometry=130x39+60-0 \
+ --tab --title="Controller" --working-directory=$WDIR/app/controllers \
+ --tab --title="Model" --working-directory=$WDIR/app/models \
+ --tab --title="View" --working-directory=$WDIR/app/views \
+ --tab --title="Misc" --working-directory=$WDIR \
+ --tab --title="Logs" --working-directory=$WDIR \
+ --tab --title="Extra" --working-directory=$WDIR &
+  
+# --window $NOMENUBAR --title="$1 zentester" --working-directory=$WDIR --geometry=100x30+0+0 -x autotest -rails &
+   
+# firefox http://www.$1.com &
+# --window $NOMENUBAR --title="$1 server" --working-directory=$WDIR --geometry=100x30-0-0 \
